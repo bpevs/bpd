@@ -1,0 +1,244 @@
+#N canvas 659 192 790 572 10;
+#X obj 99 40 inlet;
+#X obj 99 67 mtof;
+#X obj 232 263 inlet;
+#X obj 290 78 inlet;
+#X text 99 16 pitch;
+#X text 282 59 waveshape;
+#X obj 99 382 throw~ sum_voice;
+#X msg 232 297 bang;
+#N canvas 0 22 1171 728 adsr 0;
+#X obj 30 51 cnv 15 710 300 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 450 358 cnv 15 290 300 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X obj 31 357 cnv 15 410 300 empty empty empty 20 12 0 14 -203904 -66577
+0;
+#X obj 221 499 s \$0-atk_rcv;
+#X floatatom 221 438 5 0 0 0 - - -, f 5;
+#X floatatom 332 436 5 0 0 0 - - -, f 5;
+#X obj 328 582 makefilename %f;
+#X floatatom 328 562 5 0 0 0 - - -, f 5;
+#X obj 219 581 makefilename %f;
+#X floatatom 219 561 5 0 0 0 - - -, f 5;
+#X obj 332 498 s \$0-dec_rcv;
+#X obj 328 623 s \$0-sus_rcv;
+#X obj 219 623 s \$0-rel_rcv;
+#X obj 221 417 r \$0-attack;
+#X obj 332 415 r \$0-decay;
+#X obj 219 540 r \$0-sustain;
+#X obj 328 541 r \$0-release;
+#X obj 221 458 makefilename %f;
+#X obj 332 457 makefilename %f;
+#X msg 221 478 label \$1 seconds;
+#X msg 332 477 label \$1 seconds;
+#X msg 219 602 label \$1 seconds;
+#X msg 328 602 label \$1 seconds;
+#X text 64 376 Make the number boxes that tell the user the parameters
+;
+#X text 205 169 Attack;
+#X text 286 197 Sustain;
+#X text 329 212 Release;
+#X text 251 183 Decay;
+#X obj 216 107 inlet;
+#X obj 378 160 cnv 15 322 75 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 383 165 cnv 15 311 65 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X obj 378 160 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 388 169 hsl 170 10 0 5000 0 0 empty empty Attack 65 5 0 10 -228856
+-13381 -1 304 1;
+#X obj 388 183 hsl 170 10 0 5000 0 0 empty empty Decay 70 5 0 10 -228856
+-13381 -1 3380 1;
+#X obj 388 198 hsl 170 10 0 0.99 0 0 empty empty Sustain 63 5 0 10
+-228856 -13381 -1 8535 1;
+#X obj 388 213 hsl 170 10 0 5000 0 0 empty empty Release 63 5 0 10
+-228856 -13381 -1 1690 1;
+#X obj 378 232 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 564 168 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 565 169 cnv 8 68 8 empty \$0-atk_rcv 90.000000 0 4 0 10 -233017
+-1 0;
+#X obj 564 183 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 565 184 cnv 8 68 8 empty \$0-dec_rcv 1000.000000 0 4 0 10 -233017
+-1 0;
+#X obj 564 198 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 564 213 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 565 199 cnv 8 68 8 empty \$0-rel_rcv 0.500000 0 4 0 10 -228856
+-1 0;
+#X obj 385 253 s \$0-attack;
+#X obj 385 274 s \$0-decay;
+#X obj 385 295 s \$0-sustain;
+#X obj 385 316 s \$0-release;
+#X obj 635 169 cnv 8 18 8 empty empty ms 0 4 0 10 -233017 -1 0;
+#X obj 635 184 cnv 8 18 8 empty empty ms 0 4 0 10 -233017 -1 0;
+#X obj 635 214 cnv 8 18 8 empty empty ms 0 4 0 10 -233017 -1 0;
+#X obj 635 199 cnv 8 18 8 empty empty rms 0 4 0 10 -233017 -1 0;
+#X obj 565 214 cnv 8 68 8 empty \$0-sus_rcv 500.000000 0 4 0 10 -233017
+-1 0;
+#X obj 533 160 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 534 160 cnv 2 8 2 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 690 161 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 691 161 cnv 2 8 2 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 747 51 cnv 15 400 607 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X obj 631 407 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 816 292 5 0 0 0 - - -, f 5;
+#X msg 646 472 1;
+#X text 673 472 Initial;
+#X floatatom 956 293 5 0 0 0 - - -, f 5;
+#X floatatom 887 294 5 0 0 0 - - -, f 5;
+#X floatatom 1053 293 5 0 0 0 - - -, f 5;
+#X obj 633 573 *~;
+#X obj 631 494 f;
+#X obj 646 441 loadbang;
+#X obj 43 235 inlet~;
+#X obj 633 612 outlet~;
+#X obj 816 165 r \$0-attack;
+#X obj 887 165 r \$0-decay;
+#X obj 956 165 r \$0-sustain;
+#X obj 1053 165 r \$0-release;
+#X obj 126 235 inlet;
+#X text 519 381 Bang envelope;
+#X text 455 487 Only apply envelope on a;
+#X text 496 499 played note.;
+#X text 470 280 to purple box;
+#X text 531 143 |;
+#X text 506 568 Multiply envelope;
+#X text 511 579 into the audio;
+#X text 614 573 -;
+#X text 612 494 -;
+#X text 611 381 -;
+#X text 529 612 Audio outlet -;
+#X text 32 498 Send to respective parameter -;
+#X text 43 475 Label the parameter canvas -;
+#X text 61 459 Turn the # into a label -;
+#X text 118 417 Receive inlet -;
+#X text 778 576 vline creates envelope;
+#X obj 84 24 cnv 15 250 60 empty empty ADSR_Envelope 30 30 0 24 -233017
+-1 0;
+#X text 37 666 Design by: Benjamin Pevsner;
+#X obj 44 256 s~ \$0-audio;
+#X text 43 274 Audio inlet;
+#X obj 632 541 r~ \$0-audio;
+#X obj 815 557 line~;
+#X obj 771 511 pack 0 0;
+#X obj 631 383 r \$0-on;
+#X obj 842 409 f;
+#X obj 842 511 pack 0 0;
+#X obj 1008 511 pack 0 0;
+#X obj 1008 472 r \$0-off;
+#X obj 1008 493 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 842 364 del;
+#X obj 842 336 r \$0-on;
+#X floatatom 216 153 5 0 0 0 - - -, f 5;
+#X floatatom 256 167 5 0 0 0 - - -, f 5;
+#X floatatom 298 183 5 0 0 0 - - -, f 5;
+#X floatatom 338 197 5 0 0 0 - - -, f 5;
+#X obj 216 130 unpack 0 0 0 0;
+#X text 133 129 Takes presets;
+#X obj 268 89 loadbang;
+#X msg 268 109 90 1000 0.5 500;
+#X text 519 132 On/Off;
+#X text 37 680 Purple box based off Tom Erbe's design;
+#X obj 214 237 inlet;
+#X text 140 276 On;
+#X text 227 275 Off;
+#X obj 665 173 bng 20 250 50 0 empty empty ON 4 10 0 10 -99865 -204786
+-204786;
+#X obj 665 200 bng 20 250 50 0 empty empty OFF 2 10 0 10 -99865 -204786
+-204786;
+#X obj 126 258 s \$0-on1;
+#X obj 214 257 s \$0-off1;
+#X obj 703 156 r \$0-on1;
+#X obj 702 183 r \$0-off1;
+#X obj 665 252 s \$0-on;
+#X obj 665 310 s \$0-off;
+#X obj 664 287 del 100;
+#X connect 4 0 17 0;
+#X connect 5 0 18 0;
+#X connect 6 0 22 0;
+#X connect 7 0 6 0;
+#X connect 8 0 21 0;
+#X connect 9 0 8 0;
+#X connect 13 0 4 0;
+#X connect 14 0 5 0;
+#X connect 15 0 9 0;
+#X connect 16 0 7 0;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 3 0;
+#X connect 20 0 10 0;
+#X connect 21 0 12 0;
+#X connect 22 0 11 0;
+#X connect 28 0 110 0;
+#X connect 32 0 44 0;
+#X connect 33 0 45 0;
+#X connect 34 0 46 0;
+#X connect 35 0 47 0;
+#X connect 58 0 66 0;
+#X connect 59 0 97 1;
+#X connect 59 0 104 1;
+#X connect 60 0 66 1;
+#X connect 62 0 99 1;
+#X connect 63 0 100 1;
+#X connect 64 0 101 1;
+#X connect 65 0 69 0;
+#X connect 66 0 97 0;
+#X connect 67 0 60 0;
+#X connect 68 0 93 0;
+#X connect 70 0 59 0;
+#X connect 71 0 63 0;
+#X connect 72 0 62 0;
+#X connect 73 0 64 0;
+#X connect 74 0 121 0;
+#X connect 95 0 65 0;
+#X connect 96 0 65 1;
+#X connect 97 0 96 0;
+#X connect 98 0 58 0;
+#X connect 99 0 100 0;
+#X connect 100 0 96 0;
+#X connect 101 0 96 0;
+#X connect 102 0 103 0;
+#X connect 103 0 101 0;
+#X connect 104 0 99 0;
+#X connect 105 0 104 0;
+#X connect 106 0 32 0;
+#X connect 107 0 33 0;
+#X connect 108 0 34 0;
+#X connect 109 0 35 0;
+#X connect 110 0 106 0;
+#X connect 110 1 107 0;
+#X connect 110 2 108 0;
+#X connect 110 3 109 0;
+#X connect 112 0 113 0;
+#X connect 113 0 110 0;
+#X connect 116 0 122 0;
+#X connect 119 0 125 0;
+#X connect 120 0 127 0;
+#X connect 123 0 119 0;
+#X connect 124 0 120 0;
+#X connect 127 0 126 0;
+#X restore 98 314 pd adsr;
+#X obj 340 297 inlet;
+#X text 341 275 adsr;
+#X text 238 239 off;
+#X msg 157 297 bang;
+#X obj 99 108 BPD_waveshape;
+#X connect 0 0 1 0;
+#X connect 0 0 12 0;
+#X connect 1 0 13 0;
+#X connect 2 0 7 0;
+#X connect 3 0 13 1;
+#X connect 7 0 8 2;
+#X connect 8 0 6 0;
+#X connect 9 0 8 3;
+#X connect 12 0 8 1;
+#X connect 13 0 8 0;

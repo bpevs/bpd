@@ -1,0 +1,261 @@
+#N canvas 290 59 1346 894 10;
+#X obj 837 33 cnv 15 450 440 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X obj 854 150 r \$0-L/R;
+#X obj 854 251 r \$0-L;
+#X obj 854 206 s \$0-dislay_L;
+#X obj 955 206 s \$0-dislay_R;
+#X obj 854 306 s \$0-dislay_L;
+#X obj 956 306 s \$0-dislay_R;
+#X msg 854 285 1;
+#X msg 956 285 0;
+#X msg 955 185 0.5;
+#X msg 854 185 0.5;
+#X obj 854 405 s \$0-dislay_L;
+#X obj 957 405 s \$0-dislay_R;
+#X obj 854 347 r \$0-R;
+#X msg 854 384 0;
+#X msg 957 384 1;
+#X obj 533 478 cnv 15 755 340 empty empty empty 20 12 0 14 -203904
+-66577 0;
+#X obj 899 581 inlet~;
+#X obj 1155 590 inlet~;
+#X obj 899 759 tabwrite~ \$0-Sound;
+#X obj 899 652 *~;
+#X obj 1157 663 *~;
+#X obj 918 631 r \$0-dislay_L;
+#X obj 1175 642 r \$0-dislay_R;
+#X obj 899 697 +~;
+#X obj 630 723 metro;
+#X obj 577 588 loadbang;
+#X obj 577 614 t b b;
+#X obj 630 744 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 532 32 cnv 15 300 440 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 557 259 sel 0 1 2;
+#X obj 557 211 f;
+#X obj 589 211 + 1;
+#X obj 557 234 mod 3;
+#X obj 557 165 loadbang;
+#X obj 557 364 s \$0-L/R;
+#X obj 577 344 s \$0-L;
+#X obj 597 323 s \$0-R;
+#X text 553 138 Selects between the left and right;
+#X obj 686 692 r \$0-speed_out;
+#X obj 686 658 s \$0-speed_in;
+#X obj 578 662 s \$0-tog_in;
+#X obj 578 693 r \$0-tog_out;
+#X obj 985 544 inlet;
+#X text 593 677 pause;
+#X text 694 674 graph speed;
+#X obj 18 440 cnv 15 510 380 empty empty Operation: 20 12 1 20 -204786
+-66577 0;
+#X obj 271 698 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 97 554 cnv 15 210 165 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 102 558 cnv 15 200 140 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-Diagram 100 float 3;
+#A 0 -0.12409 -0.107523 -0.091888 -0.0772745 -0.063751 -0.0513816 -0.0402386
+-0.0303582 -0.0218174 -0.0146297 -0.00885612 -0.00450218 -0.00160396
+-0.000169039 -0.000202715 -0.0017145 -0.0046795 -0.00910911 -0.0149555
+-0.022215 -0.0308274 -0.0407665 -0.0519751 -0.064398 -0.077981 -0.0926416
+-0.108329 -0.12494 -0.142416 -0.160645 -0.179551 -0.199029 -0.21898
+-0.239306 -0.259891 -0.280644 -0.301432 -0.322169 -0.342722 -0.362992
+-0.38286 -0.402217 -0.420954 -0.438956 -0.456127 -0.472345 -0.487525
+-0.501554 -0.514349 -0.525813 -0.535863 -0.544419 -0.5514 -0.556743
+-0.560373 -0.562238 -0.562282 -0.560468 -0.556753 -0.551109 -0.543512
+-0.533946 -0.522403 -0.50888 -0.49338 -0.475923 -0.456531 -0.435236
+-0.412074 -0.387091 -0.36034 -0.331878 -0.301777 -0.270098 -0.236933
+-0.202362 -0.166484 -0.129392 -0.0911913 -0.0519914 -0.011899 0.0289586
+0.0704765 0.112513 0.154957 0.197666 0.240517 0.283374 0.326103 0.368576
+0.410647 0.452201 0.493079 0.533176 0.572345 0.610471 0.647425 0.683086
+0.717346 0.750077;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 102 558 graph;
+#X obj 97 553 cnv 1 10 3 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 297 554 cnv 1 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X symbolatom 274 700 4 0 0 0 - - -, f 4;
+#X floatatom 122 701 3 0 0 0 - - -, f 3;
+#X obj 103 702 tgl 14 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 195 553 cnv 1 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 196 553 cnv 1 8 2 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X text 62 723 pause |;
+#X text 104 717 ^;
+#X text 125 734 |;
+#X text 125 724 |;
+#X text 125 720 ^;
+#X text 125 744 |;
+#X text 284 716 ^;
+#X text 284 720 |;
+#X text 284 730 |;
+#X text 284 740 |;
+#X text 284 750 |;
+#X text 910 564 L;
+#X text 1169 572 R;
+#X text 159 699 Graph-O-Matic;
+#X text 196 519 |;
+#X text 196 529 |;
+#X text 196 509 |;
+#X text 196 536 v;
+#X obj 911 604 outlet~;
+#X obj 1165 613 outlet~;
+#X text 16 823 Designed by: Benjamin Pevsner;
+#X obj 17 34 cnv 15 510 400 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X obj 307 251 bng 35 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 139 120 cnv 15 214 168 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 146 125 cnv 15 200 140 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-Sound 1000 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 1000 -1 200 140 2 0 0;
+#X restore 146 125 graph;
+#X symbolatom 316 269 4 0 0 0 - - -, f 4;
+#X msg 395 193 L;
+#X obj 361 226 symbol;
+#X obj 361 250 makefilename %s;
+#X msg 429 193 R;
+#X msg 361 193 L/R;
+#X obj 361 131 r \$0-L/R;
+#X obj 395 153 r \$0-L;
+#X obj 429 174 r \$0-R;
+#X floatatom 166 268 3 0 0 0 - - -, f 3;
+#X obj 166 362 s \$0-speed_out;
+#X obj 166 332 r \$0-speed_in;
+#X obj 46 2 cnv 15 500 90 empty empty Oscilloscope 100 45 1 50 -228856
+-66577 0;
+#X obj 147 269 tgl 14 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+1;
+#X obj 41 283 s \$0-tog_out;
+#X obj 41 252 r \$0-tog_in;
+#X text 205 268 Graph-O-Matic;
+#X obj 238 121 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 239 121 cnv 2 8 2 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X obj 138 120 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 343 120 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 138 286 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 344 286 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X msg 686 632 111;
+#X text 73 759 update rate;
+#X text 8 547 Left input >;
+#X text 315 545 < Right input;
+#X text 118 491 Bang to update viewed input;
+#X text 309 700 <-Currently displayed input;
+#X text 216 769 Click to switch input source;
+#X text 907 250 Left only;
+#X text 996 285 multiply the right by 0;
+#X text 909 347 Right only;
+#X text 1029 376 multiply left by 0;
+#X text 921 151 Both channels;
+#X text 992 183 multiply both by 0.5;
+#X text 852 85 Multiply inputs before sending them to tabwrite \, in
+order to show either the left or right input;
+#X text 172 316 to dark blue;
+#X text 31 235 to dark blue;
+#X text 324 320 to orange;
+#X text 647 344 to light blue;
+#X text 785 631 from light blue;
+#X text 574 567 Spectrum Update;
+#X text 1033 545 Switch input;
+#X obj 985 565 s \$0-input_switch;
+#X obj 307 305 s \$0-input_switch;
+#X obj 622 188 r \$0-input_switch;
+#X connect 1 0 10 0;
+#X connect 1 0 9 0;
+#X connect 2 0 7 0;
+#X connect 2 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 4 0;
+#X connect 10 0 3 0;
+#X connect 13 0 14 0;
+#X connect 13 0 15 0;
+#X connect 14 0 11 0;
+#X connect 15 0 12 0;
+#X connect 17 0 20 0;
+#X connect 17 0 76 0;
+#X connect 18 0 21 0;
+#X connect 18 0 77 0;
+#X connect 20 0 24 0;
+#X connect 21 0 24 1;
+#X connect 22 0 20 1;
+#X connect 23 0 21 1;
+#X connect 24 0 19 0;
+#X connect 25 0 28 0;
+#X connect 26 0 27 0;
+#X connect 27 0 41 0;
+#X connect 27 1 107 0;
+#X connect 28 0 19 0;
+#X connect 30 0 35 0;
+#X connect 30 1 36 0;
+#X connect 30 2 37 0;
+#X connect 31 0 32 0;
+#X connect 31 0 33 0;
+#X connect 32 0 31 1;
+#X connect 33 0 30 0;
+#X connect 34 0 31 0;
+#X connect 39 0 25 1;
+#X connect 42 0 25 0;
+#X connect 43 0 128 0;
+#X connect 80 0 129 0;
+#X connect 85 0 86 0;
+#X connect 86 0 87 0;
+#X connect 87 0 84 0;
+#X connect 88 0 86 0;
+#X connect 89 0 86 0;
+#X connect 90 0 89 0;
+#X connect 91 0 85 0;
+#X connect 92 0 88 0;
+#X connect 93 0 94 0;
+#X connect 95 0 93 0;
+#X connect 97 0 98 0;
+#X connect 99 0 97 0;
+#X connect 107 0 40 0;
+#X connect 130 0 31 0;
+#X coords 0 -1 1 1 216 169 2 138 120;

@@ -1,0 +1,40 @@
+#N canvas 170 86 739 831 10;
+#X obj 41 72 cnv 15 450 220 empty empty README 20 12 0 30 -261234 -66577
+0;
+#X text 50 155 All of the abstractions are annotated inside \, with
+instructions on how to use them and how I made them \, so feel free
+to take a look.;
+#X text 26 414 Other waves input->;
+#X text 555 416 <- adsr input;
+#X text 51 195 If you don't want to look inside \, the synth uses keyboard
+inputs a-k for notes \, z/x for octave control \, and c/v to control
+the speed of the vibrato.;
+#X text 51 271 -Benjamin Pevsner;
+#X obj 461 45 loadbang;
+#X text 50 237 No guarantees if you use any looper besides looper_0.
+That works about 60% of the time.;
+#X text 52 119 This is a synth and looper.;
+#X obj 151 425 BPD_midisynth;
+#X obj 151 663 BPD_out1;
+#X obj 549 550 BPD_looper;
+#X obj 460 73 BPD_btn-dsp;
+#X obj 626 470 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 682 515 2;
+#X obj 151 549 BPD_looper;
+#X obj 342 551 BPD_looper;
+#X msg 642 515 1;
+#X obj 626 448 loadbang;
+#X connect 6 0 12 0;
+#X connect 9 0 10 0;
+#X connect 9 0 11 0;
+#X connect 9 0 15 0;
+#X connect 9 0 16 0;
+#X connect 11 0 10 0;
+#X connect 13 0 14 0;
+#X connect 13 0 17 0;
+#X connect 14 0 11 1;
+#X connect 15 0 10 0;
+#X connect 16 0 10 0;
+#X connect 17 0 16 1;
+#X connect 18 0 13 0;

@@ -1,0 +1,237 @@
+#N canvas 443 61 1205 702 10;
+#X obj 20 41 cnv 15 750 300 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 492 346 cnv 15 280 300 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X obj 21 347 cnv 15 467 300 empty empty empty 20 12 0 14 -203904 -66577
+0;
+#X obj 241 489 s \$0-atk_rcv;
+#X floatatom 241 428 5 0 0 0 - - -, f 5;
+#X floatatom 365 427 5 0 0 0 - - -, f 5;
+#X obj 365 572 makefilename %f;
+#X floatatom 365 552 5 0 0 0 - - -, f 5;
+#X obj 239 571 makefilename %f;
+#X floatatom 239 551 5 0 0 0 - - -, f 5;
+#X obj 365 489 s \$0-dec_rcv;
+#X obj 365 613 s \$0-sus_rcv;
+#X obj 239 613 s \$0-rel_rcv;
+#X obj 241 407 r \$0-attack;
+#X obj 365 406 r \$0-decay;
+#X obj 239 530 r \$0-sustain;
+#X obj 365 531 r \$0-release;
+#X obj 241 448 makefilename %f;
+#X obj 365 448 makefilename %f;
+#X msg 241 468 label \$1 seconds;
+#X msg 365 468 label \$1 seconds;
+#X msg 239 592 label \$1 seconds;
+#X msg 365 592 label \$1 seconds;
+#X text 38 363 Make the number boxes that tell the user the parameters
+;
+#X text 150 159 Attack;
+#X text 253 187 Sustain;
+#X text 298 202 Release;
+#X text 207 173 Decay;
+#X obj 153 142 inlet;
+#X obj 207 156 inlet;
+#X obj 302 186 inlet;
+#X obj 260 171 inlet;
+#X obj 350 150 cnv 15 290 75 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 355 155 cnv 15 279 65 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X obj 350 150 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 360 159 hsl 170 10 0.0001 4 0 0 empty empty Attack 65 5 0 10
+-228856 -86277 -86277 4225 1;
+#X obj 360 173 hsl 170 10 0 3 0 0 empty empty Decay 70 5 0 10 -228856
+-86277 -86277 5633 1;
+#X obj 360 188 hsl 170 10 0 1 0 0 empty empty Sustain 63 5 0 10 -228856
+-86277 -86277 16900 1;
+#X obj 360 203 hsl 170 10 0 7 0 0 empty empty Release 63 5 0 10 -228856
+-86277 -86277 2414 1;
+#X obj 350 222 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 536 158 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 537 159 cnv 8 68 8 empty \$0-atk_rcv 1.000000 0 4 0 10 -233017
+-66577 0;
+#X obj 536 173 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 537 174 cnv 8 68 8 empty \$0-dec_rcv 1.000000 0 4 0 10 -233017
+-1 0;
+#X obj 536 188 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 536 203 cnv 8 90 10 empty empty empty 0 4 0 10 -1 -66577 0;
+#X obj 537 189 cnv 8 68 8 empty \$0-rel_rcv 1.000000 0 4 0 10 -233017
+-66577 0;
+#X obj 357 255 s \$0-attack;
+#X obj 357 276 s \$0-decay;
+#X obj 357 297 s \$0-sustain;
+#X obj 357 318 s \$0-release;
+#X obj 607 159 cnv 8 18 8 empty empty sec 0 3 0 10 -233017 -66577 0
+;
+#X obj 607 174 cnv 8 18 8 empty empty sec 0 3 0 10 -233017 -66577 0
+;
+#X obj 607 204 cnv 8 18 8 empty empty sec 0 3 0 10 -233017 -66577 0
+;
+#X obj 607 189 cnv 8 18 8 empty empty rms 0 4 0 10 -233017 -66577 0
+;
+#X obj 537 204 cnv 8 68 8 empty \$0-sus_rcv 1.000000 0 4 0 10 -233017
+-66577 0;
+#X obj 403 150 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 404 150 cnv 2 8 2 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 460 150 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 461 150 cnv 2 8 2 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 518 150 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 519 150 cnv 2 8 2 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 574 150 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 575 150 cnv 2 8 2 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 630 151 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 631 151 cnv 2 8 2 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 776 40 cnv 15 400 607 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X obj 834 565 vline~;
+#X obj 834 486 pack 0 0 0 0 0 0 0 0;
+#X obj 674 381 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 846 344 5 0 0 0 - - -, f 5;
+#X msg 834 542 \$1 \$2 \, \$3 \$4 \$5 \, \$6 \$7 \$8;
+#X msg 692 438 1;
+#X text 719 440 Initial;
+#X floatatom 985 344 5 0 0 0 - - -, f 5;
+#X floatatom 900 344 5 0 0 0 - - -, f 5;
+#X floatatom 1085 344 5 0 0 0 - - -, f 5;
+#X msg 930 452 0;
+#X obj 930 424 loadbang;
+#X obj 971 461 * 2;
+#X obj 675 581 *~;
+#X obj 674 468 f;
+#X obj 692 409 loadbang;
+#X obj 38 137 inlet~;
+#X obj 675 620 outlet~;
+#X obj 846 311 * 1000;
+#X obj 900 311 * 1000;
+#X obj 1085 312 * 1000;
+#X obj 813 234 r \$0-attack;
+#X obj 899 234 r \$0-decay;
+#X obj 985 234 r \$0-sustain;
+#X obj 1085 233 r \$0-release;
+#X obj 112 238 inlet;
+#X obj 112 273 s \$0-bang;
+#X obj 674 357 r \$0-bang;
+#X text 498 461 Only apply envelope on a;
+#X text 498 475 played note.;
+#X text 103 307 to play a note.;
+#X text 104 295 Applies envelope;
+#X text 395 112 Bang;
+#X text 447 83 Attack;
+#X text 503 53 Decay;
+#X text 557 81 Sustain;
+#X text 615 113 Release;
+#X text 403 128 |;
+#X text 460 129 |;
+#X text 460 119 |;
+#X text 460 109 |;
+#X text 460 99 |;
+#X text 573 129 |;
+#X text 573 119 |;
+#X text 573 109 |;
+#X text 573 99 |;
+#X text 517 128 |;
+#X text 517 118 |;
+#X text 517 108 |;
+#X text 517 98 |;
+#X text 517 88 |;
+#X text 517 78 |;
+#X text 517 68 |;
+#X text 629 128 |;
+#X text 530 572 Multiply envelope;
+#X text 551 586 into the audio;
+#X text 656 581 -;
+#X text 654 355 -;
+#X text 565 620 Audio outlet -;
+#X text 26 488 Send to respective parameter -;
+#X text 37 465 Label the parameter canvas -;
+#X text 55 449 Turn the # into a label -;
+#X text 127 407 Receive inlet -;
+#X text 797 584 vline creates envelope;
+#X text 982 487 Packs to send to vline;
+#X obj 74 14 cnv 15 250 60 empty empty ADSR_Envelope 30 30 0 24 -233017
+-1 0;
+#X text 27 656 Design by: Benjamin Pevsner;
+#X obj 39 158 s~ \$0-audio;
+#X text 35 121 Audio inlet;
+#X obj 675 549 r~ \$0-audio;
+#X text 35 110 to orange;
+#X text 104 219 to orange;
+#X text 557 355 Bang envelope;
+#X text 361 239 to purple and blue;
+#X text 1001 461 So attacks won't overlap;
+#X text 778 310 sec to ms;
+#X obj 247 83 loadbang;
+#X msg 247 111 1;
+#X connect 4 0 17 0;
+#X connect 5 0 18 0;
+#X connect 6 0 22 0;
+#X connect 7 0 6 0;
+#X connect 8 0 21 0;
+#X connect 9 0 8 0;
+#X connect 13 0 4 0;
+#X connect 14 0 5 0;
+#X connect 15 0 9 0;
+#X connect 16 0 7 0;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 3 0;
+#X connect 20 0 10 0;
+#X connect 21 0 12 0;
+#X connect 22 0 11 0;
+#X connect 28 0 35 0;
+#X connect 29 0 36 0;
+#X connect 30 0 38 0;
+#X connect 31 0 37 0;
+#X connect 35 0 47 0;
+#X connect 36 0 48 0;
+#X connect 37 0 49 0;
+#X connect 38 0 50 0;
+#X connect 67 0 80 1;
+#X connect 68 0 71 0;
+#X connect 69 0 81 0;
+#X connect 70 0 68 1;
+#X connect 70 0 68 4;
+#X connect 70 0 79 0;
+#X connect 71 0 67 0;
+#X connect 72 0 81 1;
+#X connect 74 0 68 2;
+#X connect 75 0 68 3;
+#X connect 76 0 68 6;
+#X connect 77 0 68 5;
+#X connect 78 0 77 0;
+#X connect 79 0 68 7;
+#X connect 80 0 84 0;
+#X connect 81 0 68 0;
+#X connect 82 0 72 0;
+#X connect 83 0 134 0;
+#X connect 85 0 70 0;
+#X connect 86 0 75 0;
+#X connect 87 0 76 0;
+#X connect 88 0 85 0;
+#X connect 89 0 86 0;
+#X connect 90 0 74 0;
+#X connect 91 0 87 0;
+#X connect 92 0 93 0;
+#X connect 94 0 69 0;
+#X connect 136 0 80 0;
+#X connect 143 0 144 0;
+#X connect 144 0 37 0;
+#X connect 144 0 36 0;
+#X connect 144 0 35 0;
+#X connect 144 0 38 0;
+#X coords 0 -1 1 1 291 75 2 350 150;

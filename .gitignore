@@ -1,0 +1,8 @@
+# Ignore system-created files
+.DS_Store
+npm-debug.log
+.Spotlight-V100
+.Trashes
+
+# Thumbnails
+._*

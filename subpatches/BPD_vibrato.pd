@@ -1,0 +1,50 @@
+#N canvas 73 93 559 722 10;
+#X obj 106 286 osc~ 2;
+#X obj 248 270 pack 0 30;
+#X obj 248 292 line~;
+#X floatatom 248 244 5 0 0 0 - - -;
+#X floatatom 106 253 5 0 0 0 - - -;
+#X obj 106 309 *~;
+#X obj 100 35 inlet~;
+#X obj 100 129 cnv 15 100 100 empty empty empty 20 20 0 14 -162280
+-1 0;
+#X obj 107 393 outlet~;
+#X obj 100 66 delwrite~ \$0-vibrato 50;
+#X obj 106 360 vd~ \$0-vibrato;
+#X obj 103 133 cnv 15 92 92 empty empty empty 16 20 0 14 -99865 -191407
+0;
+#X obj 109 169 hsl 80 20 0 15 0 0 empty empty Speed 27 9 0 10 -228856
+-1 -1 0 1;
+#X obj 109 197 hsl 80 20 0 13 0 0 empty empty Depth 27 9 0 10 -228856
+-1 -1 0 1;
+#X obj 330 82 inlet;
+#X obj 396 84 inlet;
+#X obj 106 335 +~ 10;
+#X obj 144 128 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 145 128 cnv 2 8 2 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X obj 190 128 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 191 128 cnv 2 8 2 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#X obj 100 227 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 100 128 cnv 3 10 3 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 109 139 cnv 15 80 20 empty empty Vibrato 12 10 0 14 -1 -4034
+0;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 1;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 16 0;
+#X connect 6 0 9 0;
+#X connect 10 0 8 0;
+#X connect 12 0 4 0;
+#X connect 13 0 3 0;
+#X connect 14 0 12 0;
+#X connect 15 0 13 0;
+#X connect 16 0 10 0;
+#X coords 0 -1 1 1 100 102 1 100 128;

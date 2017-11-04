@@ -1,0 +1,34 @@
+#N canvas 536 205 646 511 10;
+#X obj 100 100 cnv 30 29 29 empty empty empty 30 30 0 14 -128992 -66577
+0;
+#X obj 102 186 s record;
+#X obj 102 103 tgl 25 0 empty \$0record_rcv R 6 13 0 20 -143491 -143491
+-166441 0 1;
+#X obj 185 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 204 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 330 s \$0record_rcv;
+#X obj 232 208 t b f;
+#X msg 184 191 13;
+#X obj 185 268 pack 0 0 0;
+#X msg 185 296 color \$1 \$2 1;
+#X msg 204 174 23;
+#X obj 185 128 sel 1 0;
+#X obj 68 220 outlet;
+#X connect 2 0 1 0;
+#X connect 2 0 11 0;
+#X connect 2 0 12 0;
+#X connect 3 0 7 0;
+#X connect 4 0 10 0;
+#X connect 6 0 8 0;
+#X connect 6 1 8 1;
+#X connect 7 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X connect 10 0 8 0;
+#X connect 11 0 3 0;
+#X connect 11 1 4 0;
+#X coords 0 -1 1 1 30 30 2 100 100;

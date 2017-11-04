@@ -1,0 +1,34 @@
+#N canvas 102 41 1318 767 10;
+#X floatatom 542 157 5 0 0 0 - - -, f 5;
+#X floatatom 783 350 5 0 0 0 - - -, f 5;
+#X floatatom 887 158 5 0 0 0 - - -, f 5;
+#X obj 541 117 loadbang;
+#X obj 887 115 loadbang;
+#X obj 36 366 cnv 15 370 180 empty empty README 20 12 0 30 -203904
+-66577 0;
+#X text 46 447 All of the abstractions are annotated inside \, with
+instructions on how to use them and how I made them \, so feel free
+to take a look.;
+#X text 44 504 -Benjamin Pevsner;
+#X obj 375 337 loadbang;
+#X msg 541 137 110;
+#X msg 887 136 220;
+#X text 47 413 To the right is a signal display and a few wavetables.
+;
+#X obj 375 365 BPD_btn-dsp;
+#X obj 679 374 BPD_scope;
+#X obj 678 577 BPD_out2;
+#X obj 542 181 BPD_waveshape;
+#X obj 887 182 BPD_waveshape;
+#X connect 0 0 15 0;
+#X connect 1 0 13 1;
+#X connect 2 0 16 0;
+#X connect 3 0 9 0;
+#X connect 4 0 10 0;
+#X connect 8 0 12 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 13 0 14 0;
+#X connect 13 1 14 2;
+#X connect 15 0 13 0;
+#X connect 16 0 13 2;
