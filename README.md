@@ -15,10 +15,11 @@ This is not reccommended because some of the abstractions depend on each other, 
 
 SubPatches with UI
 ======
-|----|----|
+| name | use |
+| ---- | ---- |
 | BPD_adsr | An ADSR envelope with UI and inlet controls |
 | BPD_btn-dsp |  Turn on/off DSP vis UI or inlet |
-| BPD_btn-record |  |
+| BPD_btn-record | Stylized button |
 | BPD_comb | Comb filter with inlet controls |
 | BPD_dsp | Turn on/off DSP vis UI or inlet |
 | BPD_fft | Linear FFT with UI and inlet controls |
@@ -40,13 +41,15 @@ SubPatches with UI
 
 SubPatches for calculation
 =========
-|----|----|
+| name | use |
+| ---- | ---- |
 | BPD_digitsplit | Split number into digits |
 | BPD_mtoc | Midi to cent |
 | BPD_ftoc | Frequency to cent |
 
 SubPatches for control
 ==========
-|----|----|
+| name | use |
+| ---- | ---- |
 | BPD_midikeys | Use your computer keyboard as a piano keyboard |
 | BPD_switch | Turn it on, turn it off |
