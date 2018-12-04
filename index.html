@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      * {
+        font-family: monospace;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+      }
+      #svg, svg {
+        min-width: 100%;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="my-title" id="my-title">BPD Patches</h1>
+    <select id="select-patch"></select>
+    <div id="svg"></div>
+
+    <script src="/pd-fileutils.min.js"></script>
+    <script>
+      const dropdown = document.getElementById("select-patch")
+      const svg = document.getElementById("svg")
+
+      showPatch("/subpatches/BPD_fft.pd")
+      populateDropdown()
+      dropdown.addEventListener("change", evt => showPatch(evt.target.value))
+
+      async function populateDropdown() {
+        const res = await fetch("https://api.github.com/repos/ivebencrazy/BPD/git/trees/master?recursive=1")
+        const json = await res.json()
+
+        return json.tree
+          .filter(file => /.pd$/.test(file.path))
+          .map(file => {
+            const path = "/" + file.path
+            const option = document.createElement("option")
+            option.text = "/" + file.path
+            option.value = "/" + file.path
+            dropdown.add(option)
+          })
+      }
+
+      async function showPatch(path) {
+        const res = await fetch(path)
+        const text = await res.text()
+        const patch = pdfu.parse(text)
+        const rendered = pdfu.renderSvg(patch, { svgFile: false })
+        svg.innerHTML = rendered
+      }
+    </script>
+  </body>
+</html>
